@@ -1,0 +1,13 @@
+# general
+*.log
+tmp
+dump
+.idea
+.bsp
+.vscode
+out
+target
+*.dylib
+
+# mac os
+.DS_Store
