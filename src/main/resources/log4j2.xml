@@ -1,0 +1,17 @@
+<Configuration xmlns="http://logging.apache.org/log4j/2.0/config">
+    <Appenders>
+        <RollingRandomAccessFile name="CronSizedAppender"
+                                 filePattern="logs/test.%d{yyyyMMddHHmm}.%i.log">
+            <PatternLayout pattern="%msg%n"/>
+            <Policies>
+                <CronTriggeringPolicy schedule="0 * * * * ?" />
+                <SizeBasedTriggeringPolicy size="10KB" />
+            </Policies>
+        </RollingRandomAccessFile>
+    </Appenders>
+    <Loggers>
+        <Logger name="MyLogger" level="all" additivity="false">
+            <AppenderRef ref="CronSizedAppender"/>
+        </Logger>
+    </Loggers>
+</Configuration>
